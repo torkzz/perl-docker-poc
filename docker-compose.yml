@@ -1,0 +1,22 @@
+version: "3.8" # Use the desired Docker Compose version
+
+services:
+  my-perl-app:
+    build:
+      context: .
+      dockerfile: Dockerfile # Path to your Dockerfile
+    container_name: my-perl-container # Name your container
+    volumes:
+      - ./src:/usr/src/myapp # Mount your Perl app directory
+    environment:
+      - MY_VARIABLE=example_value # Set environment variables if needed
+    # Add ports if your Perl app requires network access
+    # ports:
+    #   - "8080:80"
+    #   - "3000:3000"
+    # Add any other configurations needed for your Perl app
+
+  # Add other services if required
+  # service_name:
+  #   image: imagename
+  #   ...
